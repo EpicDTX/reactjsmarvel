@@ -1,7 +1,7 @@
 Process:
-1. Learnt as much as I could about React and its syntax because I have not use it before.
+1. Learnt about React and its syntax.
 2. Grabbed data from Marvel API using its Interactive Documentation to test application.
-3. Focused on the backend first. Made sure I could extract the needed data and display it using React.
+3. Focused on the backend first. Made sure needed data could be extracted and displayed using React.
 4. Created the React components. Worked on the dropdown list, made sure selecting a character changed what was displayed.
 5. Made the front-end look appealing.
 6. Worked on the positions. Making sure the two additional positions can be chosen by user.
