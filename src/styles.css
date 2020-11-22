@@ -64,3 +64,11 @@ body {
     background-color: #fff;
     margin-top: 0;
 }
+
+.series {
+    word-wrap: break-word;
+}
+
+.seriesList {
+    padding-left: 18px;
+}

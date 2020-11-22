@@ -26,6 +26,12 @@ class Character extends React.Component {
           <hr className="hr" />
           <p>{character.name}</p>
           <p>{character.description}</p>
+          <p>Character is part of:</p>
+          <div className="series">
+            <ul className="seriesList">
+              {character.series}
+            </ul>
+          </div>
         </div>
       );
     }
@@ -40,6 +46,7 @@ class Player extends React.Component {
       image: null,
       extension: null,
       description: null,
+      series: null,
       position: this.props.position,
       fixedPosition: this.props.fixedPosition,
     };
@@ -56,6 +63,7 @@ class Player extends React.Component {
         image: result.thumbnail.path,
         extension: result.thumbnail.extension,
         description: result.description,
+        series: result.series.items.slice(0,3).map((item, i) => <li key={i} value={item.name}>{item.name}</li>),
       });
     }
   };
