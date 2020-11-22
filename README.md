@@ -6,7 +6,7 @@ Process:
 5. Made the front-end look appealing.
 6. Worked on the positions. Making sure the two additional positions can be chosen by user.
 7. Fixed up and finalised the front-end.
-8. The two additional positions can only be chosen once, trying to fix that.
+8. Made it so the two additional players' position can be changed.
 9. Planning to move onto dynamic data.
 10. Planning to make the team shareable to social media.
 
