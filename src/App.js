@@ -41,6 +41,7 @@ class Player extends React.Component {
       extension: null,
       description: null,
       position: this.props.position,
+      fixedPosition: this.props.fixedPosition,
     };
     this.handleCharacterChange = this.handleCharacterChange.bind(this);
     this.handlePositionChange = this.handlePositionChange.bind(this);
@@ -77,7 +78,7 @@ class Player extends React.Component {
     const positions = [{id: 1, position: "Striker (ST)"}, {id: 2, position: "Midfielder (MD)"}, {id: 3, position: "Defender (DF)"}];
     let positionList = positions.map((item) => <option key={item.id} value={item.position}>{item.position}</option>);
 
-    if(this.state.position === null) {
+    if(this.state.fixedPosition === false) {
       return(
         //<form onSubmit={this.handleSubmit}>
         <div className="card">
@@ -115,7 +116,7 @@ class Player extends React.Component {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {position: ["Goalkeeper (GK)", "Striker (ST)", "Midfielder (MD)", "Defender (DF)", null]}
+    this.state = {position: ["Goalkeeper (GK)", "Striker (ST)", "Midfielder (MD)", "Defender (DF)", null], fixedPosition: [true, false]}
   }
   render() {
     return(
@@ -123,12 +124,12 @@ class App extends React.Component {
         <h1 className="title">Marvel Soccer Team</h1>
         <p></p>
         <div className="app">
-          <Player position={this.state.position[0]} />
-          <Player position={this.state.position[1]} />
-          <Player position={this.state.position[2]} />
-          <Player position={this.state.position[3]} />
-          <Player position={this.state.position[4]} />
-          <Player position={this.state.position[4]} />
+          <Player position={this.state.position[0]} fixedPosition={this.state.fixedPosition[0]} />
+          <Player position={this.state.position[1]} fixedPosition={this.state.fixedPosition[0]} />
+          <Player position={this.state.position[2]} fixedPosition={this.state.fixedPosition[0]} />
+          <Player position={this.state.position[3]} fixedPosition={this.state.fixedPosition[0]} />
+          <Player position={this.state.position[4]} fixedPosition={this.state.fixedPosition[1]} />
+          <Player position={this.state.position[4]} fixedPosition={this.state.fixedPosition[1]} />
         </div>
       </div>
     );
