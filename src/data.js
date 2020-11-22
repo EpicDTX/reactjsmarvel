@@ -1,3 +1,5 @@
+// https://gateway.marvel.com:443/v1/public/characters?apikey=9213a17feb8501e17d12d77c281e4785
+
 export const data = 
 {
     "code": 200,
