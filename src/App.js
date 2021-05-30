@@ -41,7 +41,7 @@ class Character extends React.Component {
 class Player extends React.Component {
   constructor(props) {
     super(props);
-    this.characterinfo = {
+    this.state = {
       name: null,
       image: null,
       extension: null,
@@ -86,17 +86,17 @@ class Player extends React.Component {
     const positions = [{id: 1, position: "Attacker"}, {id: 2, position: "Defender"}, {id: 3, position: "Supporter"}];
     let positionList = positions.map((item) => <option key={item.id} value={item.position}>{item.position}</option>);
 
-    if(this.characterinfo.fixedPosition === false) {
+    if(this.state.fixedPosition === false) {
       return(
         //<form onSubmit={this.handleSubmit}>
         <div className="card">
-          <Character character={this.characterinfo} />
+          <Character character={this.state} />
           <div className="select-div">
-            <select className="select" value={this.characterinfo.name} onChange={this.handleCharacterChange}>
+            <select className="select" value={this.state.name} onChange={this.handleCharacterChange}>
               <option value="" disabled selected>Select a Character</option>
               {characters}
             </select>
-            <select className="select" value={this.characterinfo.position} onChange={this.handlePositionChange}>
+            <select className="select" value={this.state.position} onChange={this.handlePositionChange}>
               <option value="" disabled selected>Select their Position</option>
               {positionList}
             </select>
@@ -108,9 +108,9 @@ class Player extends React.Component {
     }else{
       return(
         <div className="card">
-          <Character character={this.characterinfo} />
+          <Character character={this.state} />
           <div className="select-div">
-            <select className="select" value={this.characterinfo.name} onChange={this.handleCharacterChange}>
+            <select className="select" value={this.state.name} onChange={this.handleCharacterChange}>
               <option value="" disabled selected>Select a Character</option>
               {characters}
             </select>
