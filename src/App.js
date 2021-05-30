@@ -83,7 +83,7 @@ class Player extends React.Component {
  */
   render() {
     let characters = data.data.results.map(({name, id}) => <option key={id} value={name}>{name}</option>);
-    const positions = [{id: 1, position: "Striker (ST)"}, {id: 2, position: "Midfielder (MD)"}, {id: 3, position: "Defender (DF)"}];
+    const positions = [{id: 1, position: "Attacker"}, {id: 2, position: "Defender"}, {id: 3, position: "Supporter"}];
     let positionList = positions.map((item) => <option key={item.id} value={item.position}>{item.position}</option>);
 
     if(this.state.fixedPosition === false) {
@@ -124,20 +124,20 @@ class Player extends React.Component {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {position: ["Goalkeeper (GK)", "Striker (ST)", "Midfielder (MD)", "Defender (DF)", null], fixedPosition: [true, false]}
+    this.state = {position: ["Attacker", "Defender", "Supporter", null], fixedPosition: [true, false]}
   }
   render() {
     return(
       <div>
-        <h1 className="title">Marvel Soccer Team</h1>
+        <h1 className="title">Marvel Team</h1>
         <p></p>
         <div className="app">
           <Player position={this.state.position[0]} fixedPosition={this.state.fixedPosition[0]} />
+          <Player position={this.state.position[0]} fixedPosition={this.state.fixedPosition[0]} />
           <Player position={this.state.position[1]} fixedPosition={this.state.fixedPosition[0]} />
           <Player position={this.state.position[2]} fixedPosition={this.state.fixedPosition[0]} />
-          <Player position={this.state.position[3]} fixedPosition={this.state.fixedPosition[0]} />
-          <Player position={this.state.position[4]} fixedPosition={this.state.fixedPosition[1]} />
-          <Player position={this.state.position[4]} fixedPosition={this.state.fixedPosition[1]} />
+          <Player position={this.state.position[3]} fixedPosition={this.state.fixedPosition[1]} />
+          <Player position={this.state.position[3]} fixedPosition={this.state.fixedPosition[1]} />
         </div>
       </div>
     );
@@ -145,3 +145,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+
