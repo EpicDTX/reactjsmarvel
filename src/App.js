@@ -41,7 +41,7 @@ class Character extends React.Component {
 class Player extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.characterinfo = {
       name: null,
       image: null,
       extension: null,
@@ -86,17 +86,17 @@ class Player extends React.Component {
     const positions = [{id: 1, position: "Attacker"}, {id: 2, position: "Defender"}, {id: 3, position: "Supporter"}];
     let positionList = positions.map((item) => <option key={item.id} value={item.position}>{item.position}</option>);
 
-    if(this.state.fixedPosition === false) {
+    if(this.characterinfo.fixedPosition === false) {
       return(
         //<form onSubmit={this.handleSubmit}>
         <div className="card">
-          <Character character={this.state} />
+          <Character character={this.characterinfo} />
           <div className="select-div">
-            <select className="select" value={this.state.name} onChange={this.handleCharacterChange}>
+            <select className="select" value={this.characterinfo.name} onChange={this.handleCharacterChange}>
               <option value="" disabled selected>Select a Character</option>
               {characters}
             </select>
-            <select className="select" value={this.state.position} onChange={this.handlePositionChange}>
+            <select className="select" value={this.characterinfo.position} onChange={this.handlePositionChange}>
               <option value="" disabled selected>Select their Position</option>
               {positionList}
             </select>
@@ -108,9 +108,9 @@ class Player extends React.Component {
     }else{
       return(
         <div className="card">
-          <Character character={this.state} />
+          <Character character={this.characterinfo} />
           <div className="select-div">
-            <select className="select" value={this.state.name} onChange={this.handleCharacterChange}>
+            <select className="select" value={this.characterinfo.name} onChange={this.handleCharacterChange}>
               <option value="" disabled selected>Select a Character</option>
               {characters}
             </select>
@@ -124,7 +124,7 @@ class Player extends React.Component {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {position: ["Attacker", "Defender", "Supporter", null], fixedPosition: [true, false]}
+    this.positions = {position: ["Attacker", "Defender", "Supporter", null], fixedPosition: [true, false]}
   }
   render() {
     return(
@@ -132,12 +132,12 @@ class App extends React.Component {
         <h1 className="title">Marvel Team</h1>
         <p></p>
         <div className="app">
-          <Player position={this.state.position[0]} fixedPosition={this.state.fixedPosition[0]} />
-          <Player position={this.state.position[0]} fixedPosition={this.state.fixedPosition[0]} />
-          <Player position={this.state.position[1]} fixedPosition={this.state.fixedPosition[0]} />
-          <Player position={this.state.position[2]} fixedPosition={this.state.fixedPosition[0]} />
-          <Player position={this.state.position[3]} fixedPosition={this.state.fixedPosition[1]} />
-          <Player position={this.state.position[3]} fixedPosition={this.state.fixedPosition[1]} />
+          <Player position={this.positions.position[0]} fixedPosition={this.positions.fixedPosition[0]} />
+          <Player position={this.positions.position[0]} fixedPosition={this.positions.fixedPosition[0]} />
+          <Player position={this.positions.position[1]} fixedPosition={this.positions.fixedPosition[0]} />
+          <Player position={this.positions.position[2]} fixedPosition={this.positions.fixedPosition[0]} />
+          <Player position={this.positions.position[3]} fixedPosition={this.positions.fixedPosition[1]} />
+          <Player position={this.positions.position[3]} fixedPosition={this.positions.fixedPosition[1]} />
         </div>
       </div>
     );
